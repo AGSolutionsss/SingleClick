@@ -1,0 +1,1 @@
+export const baseURL = 'https://singleclik.com/api/public/api';
