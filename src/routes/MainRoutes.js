@@ -11,6 +11,11 @@ const CategoriesSubAdd = lazy(() => import('../views/categoriessub/CategoriesSub
 const CategoriesSubEdit = lazy(() => import('../views/categoriessub/CategoriesSubEdit'));
 const UsersList = lazy(() => import('../views/users/UsersList'));
 const MembersList = lazy(() => import('../views/members/MembersList'));
+const MembersView = lazy(() => import('../views/members/MembersView'));
+const ProfileEdit = lazy(() => import('../views/profileedit/ProfileEdit'));
+const ProductList = lazy(() => import('../views/product/ProductList'));
+const ProductAdd = lazy(() => import('../views/product/ProductAdd'));
+const ProductEdit = lazy(() => import('../views/product/ProductEdit'));
 const Commingsoon = lazy(() => import('../views/comingsoon'));
 
 const MainRoutes = () => {
@@ -28,6 +33,11 @@ const MainRoutes = () => {
                 '/category-sub-edit',
                 '/users-list',
                 '/members-list',
+                '/members-view',
+                '/profile-edit',
+                '/product-list',
+                '/product-add',
+                '/product-edit',
                 '/commingsoon',
                 
             ]}
@@ -43,6 +53,11 @@ const MainRoutes = () => {
                     <Route path='/category-sub-edit' component={CategoriesSubEdit}/>
                     <Route path='/users-list' component={UsersList}/>
                     <Route path='/members-list' component={MembersList}/>
+                    <Route path='/members-view' component={MembersView}/>
+                    <Route path='/profile-edit' component={ProfileEdit}/>
+                    <Route path='/product-list' component={ProductList}/>
+                    <Route path='/product-add' component={ProductAdd}/>
+                    <Route path='/product-edit' component={ProductEdit}/>
                     <Route path='/commingsoon' component={Commingsoon}/>
                 </Switch>
             </MainLayout>

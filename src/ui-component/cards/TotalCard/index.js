@@ -102,7 +102,7 @@ const TotalCard = (props) => {
                     <Grid item>
                         <Grid container alignItems="center">
                             <Grid item>
-                                <Typography className={classes.cardHeading}></Typography>
+                                <Typography className={classes.cardHeading}>{props.total_product}</Typography>
                             </Grid>
                             <Grid item>
                                 <Avatar className={classes.avatarCricle} >
@@ -112,7 +112,7 @@ const TotalCard = (props) => {
                         </Grid>
                     </Grid>
                     <Grid item>
-                        <Typography className={classes.subHeading}></Typography>
+                        <Typography className={classes.subHeading}>Product/Srvice</Typography>
                     </Grid>
                 </Grid>
             </CardContent>

@@ -99,9 +99,90 @@ const icons = {
     IconBasket: IconBasket
 };
 
+const menuItems1 = {
+    items: [
+        {
+            
+            id: 'dashboard',
+            title: <FormattedMessage id="dashboard" />,
+            type: 'group',
+            children: [
+                {
+                    id: 'dash-default',
+                    title: <FormattedMessage id="Dashboard" />,
+                    type: 'item',
+                    url: '/dashboard',
+                    icon: icons['IconDashboard'],
+                    breadcrumbs: false
+                },
+                {
+                    id: 'icons1',
+                    title: <FormattedMessage id="Members" />,
+                    type: 'item',
+                    url: '/members-list',
+                    icon: icons['IconPencil'],
+                    
+                },
+                {
+                    id: 'icons',
+                    title: <FormattedMessage id="Profile" />,
+                    type: 'item',
+                    url: '/profile-edit',
+                    icon: icons['IconCalendar'],
+                    
+                },
+            ]
+        },
+    ]
+};
 
+const menuItems2 = {
+    items: [
+        {
+            
+            id: 'dashboard',
+            title: <FormattedMessage id="dashboard" />,
+            type: 'group',
+            children: [
+                {
+                    id: 'dash-default',
+                    title: <FormattedMessage id="Dashboard" />,
+                    type: 'item',
+                    url: '/dashboard',
+                    icon: icons['IconDashboard'],
+                    breadcrumbs: false
+                },
+                {
+                    id: 'icons1',
+                    title: <FormattedMessage id="Members" />,
+                    type: 'item',
+                    url: '/members-list',
+                    icon: icons['IconPencil'],
+                    
+                },
+                {
+                    id: 'icons',
+                    title: <FormattedMessage id="Profile" />,
+                    type: 'item',
+                    url: '/profile-edit',
+                    icon: icons['IconCalendar'],
+                    
+                },
+                {
+                    id: 'product',
+                    title: <FormattedMessage id="Product/Service" />,
+                    type: 'item',
+                    url: '/product-list',
+                    icon: icons['IconCalendar'],
+                    
+                },
+            ]
+        },
+        
+    ]
+};
 
-    const menuItems = {
+const menuItems3 = {
         items: [
             {
                 
@@ -163,7 +244,14 @@ const icons = {
                         icon: icons['IconCalendar'],
                         
                     },
-                    
+                    {
+                        id: 'product',
+                        title: <FormattedMessage id="Product/Service" />,
+                        type: 'item',
+                        url: '/product-list',
+                        icon: icons['IconCalendar'],
+                        
+                    },
                 ]
             },
         
@@ -171,7 +259,7 @@ const icons = {
     };
 
     
-
+    const menuItems = localStorage.getItem('user_type_id') === '1' ? menuItems1 : localStorage.getItem('user_type_id') === '2' ? menuItems2 : menuItems3;
 
 
 export default menuItems;

@@ -3,12 +3,14 @@ import {Grid} from '@material-ui/core';
 import {gridSpacing} from '../../store/constant';
 import EarningCard from '../../ui-component/cards/EarningCard';
 import TotalChartCard from '../../ui-component/cards/TotalChartCard';
+import TotalCard from '../../ui-component/cards/TotalCard';
 import {baseURL} from "../../api/index";
 
 const Dashboard = () => {
 
-    const [total_patron_life_member, settotal_patron_life_member] = useState("");
-    const [total_life_member, settotal_life_member] = useState("");
+    const [total_user, settotal_user] = useState("");
+    const [total_member, settotal_member] = useState("");
+    const [total_product, settotal_product] = useState("");
     
     useEffect(() => {
         var isLoggedIn = localStorage.getItem("login");
@@ -28,11 +30,12 @@ const Dashboard = () => {
                 'Authorization': 'Bearer '+theLoginToken
                 }             
         };     
-        fetch(baseURL+'/fetch-web-dashboard', requestOptions)
+        fetch(baseURL+'/panel-fetch-dashboard', requestOptions)
         .then(response => response.json())
         .then(data => {
-            settotal_patron_life_member(data.total_patron_life_member);
-            settotal_life_member(data.total_life_member);
+            settotal_user(data.total_user);
+            settotal_member(data.total_member);
+            settotal_product(data.total_product);
             
         }); 
     }, []);
@@ -43,10 +46,13 @@ const Dashboard = () => {
             <Grid item xs={12}>
                 <Grid container spacing={gridSpacing}>
                     <Grid item lg={4} md={6} sm={6} xs={12}>
-                        <EarningCard total_patron_life_member={total_patron_life_member}/>
+                        <EarningCard total_user={total_user}/>
                     </Grid>
                     <Grid item lg={4} md={6} sm={6} xs={12}>
-                        <TotalChartCard total_life_member={total_life_member}/>
+                        <TotalChartCard total_member={total_member}/>
+                    </Grid>
+                    <Grid item lg={4} md={6} sm={6} xs={12}>
+                        <TotalCard total_product={total_product}/>
                     </Grid>
                 </Grid>
             </Grid>
