@@ -101,7 +101,7 @@ const TotalChartCard = (props) => {
                     <Grid item>
                         <Grid container alignItems="center">
                             <Grid item>
-                                <Typography className={classes.cardHeading}>{props.total_life_member}</Typography>
+                                <Typography className={classes.cardHeading}>{props.total_member}</Typography>
                             </Grid>
                             <Grid item>
                                 <Avatar className={classes.avatarCricle}>
@@ -111,7 +111,7 @@ const TotalChartCard = (props) => {
                         </Grid>
                     </Grid>
                     <Grid item>
-                        <Typography className={classes.subHeading}>Life Time Members</Typography>
+                        <Typography className={classes.subHeading}>Members</Typography>
                     </Grid>
                 </Grid>
             </CardContent>
